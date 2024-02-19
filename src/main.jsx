@@ -10,7 +10,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 
 const config = {
-  initialColorMode: 'dark', // 'dark' | 'light'
+  initialColorMode: 'dark',
   useSystemColorMode: false,
 }
 const styles={
