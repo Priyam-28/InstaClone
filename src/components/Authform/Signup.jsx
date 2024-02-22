@@ -48,11 +48,11 @@ export default function Signup() {
           value={inputs.password}
           size={"sm"}
           onChange={(e) => setInputs({ ...inputs, password: e.target.value })} />
-        <InputRightElement h='full'>
-          <Button variant={"ghost"} size={"sm"} onClick={() => setShowPassword(!showPassword)}>
-            {showPassword ? <ViewIcon /> : <ViewOffIcon />}
-          </Button>
-        </InputRightElement>
+          <InputRightElement h='full'>
+            <Button variant={"ghost"} size={"sm"} onClick={() => setShowPassword(!showPassword)}>
+              {showPassword ? <ViewIcon /> : <ViewOffIcon />}
+            </Button>
+          </InputRightElement>
 
       </InputGroup>
       {error && (

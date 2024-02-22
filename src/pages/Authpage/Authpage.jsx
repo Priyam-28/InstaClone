@@ -12,7 +12,7 @@ export default function Authpage() {
             <Image src='/auth.png' h={650} alt='Phone img' />
           </Box>
 
-        {/* Right side whre creentials are to be entered */}
+        {/* Right side where creentials are to be entered */}
           <VStack spacing={4} align={'stretch'}>
             <Authform />
             <Box textAlign={'center'}>
