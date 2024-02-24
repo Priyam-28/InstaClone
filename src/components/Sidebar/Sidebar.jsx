@@ -1,30 +1,30 @@
-import { Box, Button, Flex, Tooltip } from '@chakra-ui/react'
-// import React from 'react'
-import SidebarItems from './SidebarItems'
-import useLogout from '../../hooks/useLogout';
-import { InstagramLogo, InstagramMobileLogo } from '../../assets/content';
-import { Link, Router as RouterLink } from 'react-router-dom';
+import { Box, Button, Flex, Link, Tooltip } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
+import { InstagramLogo, InstagramMobileLogo } from "../../assets/content";
+
 import { BiLogOut } from "react-icons/bi";
+import useLogout from "../../hooks/useLogout";
+import SidebarItems from "./SidebarItems";
 
-
-export default function Sidebar() {
-  const {handleLogout,isLoggingOut}=useLogout();
-  return (
-    <Box height={"100vh"}
-    borderRight={"1px solid"}
-    borderColor={"whiteAlpha.300"}
-    py={8}
-    position={"sticky"}
-    top={0}
-    left={0}
-    px={{base :2,md:4}}>
-    
-
-        <Flex direction={'column'} gap={5} cursor={'pointer'} height={"full"}>
-        <Link to={"/"} as={RouterLink} pl={2} display={{ base: "none", md: "block" }} cursor='pointer'>
+const Sidebar = () => {
+	const { handleLogout, isLoggingOut } = useLogout();
+	return (
+		<Box
+			height={"100vh"}
+			// width={"15vw"}
+			borderRight={"1px solid"}
+			borderColor={"whiteAlpha.300"}
+			py={8}
+			position={"sticky"}
+			top={0}
+			left={0}
+			px={{ base: 2, md: 4 }}
+		>
+			<Flex direction={"column"} gap={10} w='full' height={"full"}>
+				<Link to={"/"} as={RouterLink} pl={2} display={{ base: "none", md: "block" }} cursor='pointer'>
 					<InstagramLogo />
 				</Link>
-        <Link
+				<Link
 					to={"/"}
 					as={RouterLink}
 					p={2}
@@ -38,7 +38,7 @@ export default function Sidebar() {
 				>
 					<InstagramMobileLogo />
 				</Link>
-        <Flex direction={"column"} gap={5} cursor={"pointer"}>
+				<Flex direction={"column"} gap={5} cursor={"pointer"}>
 					<SidebarItems />
 				</Flex>
 
@@ -73,8 +73,9 @@ export default function Sidebar() {
 						</Button>
 					</Flex>
 				</Tooltip>
-        </Flex>
+			</Flex>
+		</Box>
+	);
+};
 
-    </Box>
-  )
-}
+export default Sidebar;

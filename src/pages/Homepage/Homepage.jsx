@@ -1,7 +1,7 @@
 // import React from 'react'
 
 import { Box, Container, Flex } from "@chakra-ui/react";
-import Sidebar from "../../components/Sidebar/Sidebar";
+// import Sidebar from "../../components/Sidebar/Sidebar";
 import FeedPosts from "../../components/FeedPosts/FeedPosts";
 import SuggestedUser from "../../SuggestedUsers/SuggestedUser";
 
@@ -9,7 +9,7 @@ import SuggestedUser from "../../SuggestedUsers/SuggestedUser";
 export default function Homepage() {
   return (
     <>
-    <Sidebar/>
+    {/* <Sidebar/> */}
     <Container 
     maxW={"container.lg"}>
       <Flex gap={20}>

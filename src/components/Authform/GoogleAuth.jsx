@@ -6,8 +6,9 @@ import { auth, firestore } from "../../firebase/firebase";
 import useShowToast from "../../hooks/useShowToast";
 import useAuthStore from "../../store/authStore";
 import { doc, getDoc, setDoc } from "firebase/firestore";
+import PropTypes from 'prop-types';
 
-export default function GoogleAuth({prefix}) {
+const GoogleAuth=({prefix})=> {
 	const [signInWithGoogle, error] = useSignInWithGoogle(auth);
 	const showToast=useShowToast();
 	const loginUser=useAuthStore((state)=>state.login);
@@ -54,3 +55,8 @@ export default function GoogleAuth({prefix}) {
 		</Flex>
   )
 }
+GoogleAuth.propTypes = {
+    prefix: PropTypes.string.isRequired,
+};
+
+export default GoogleAuth;
