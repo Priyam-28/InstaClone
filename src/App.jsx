@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Homepage />} />
         <Route path='/auth' element={<Authpage />} />
-        <Route path='/profile' element={<ProfilePage/>} />
+        <Route path='/:uname' element={<ProfilePage/>} />
 
       </Routes>
     </PageLayout>
