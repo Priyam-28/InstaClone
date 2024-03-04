@@ -1,18 +1,13 @@
 import {  Flex, GridItem, Text} from "@chakra-ui/react";
 import { AiFillHeart } from "react-icons/ai";
 import { FaComment } from "react-icons/fa";
-import useUserProfileStore from "../../store/userProfileStore";
-import useAuthStore from "../../store/authStore";
-import useShowToast from "../../hooks/useShowToast";
+
 
 // import { MdDelete } from "react-icons/md";
 
 
-export default function ProfilePost({post}) {
-  const userProfile=useUserProfileStore((state)=>state.userProfile);//chekcing the user profile
-  const authUser=useAuthStore((state)=>state.user);
-  //checking authentication for useer
-  const showToast=useShowToast();
+export default function ProfilePost() {
+  
   return (
     <>
     <GridItem cursor={"pointer"} borderRadius={4} overflow={"hidden"} border={"1px solid"} borderColor={"whiteAlpha.300"} position={"relative"} aspectRatio={1/1} >
