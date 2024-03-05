@@ -4,6 +4,8 @@ import { Avatar, Box, Flex, Skeleton, SkeletonCircle } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { time } from "../../utils/time";
 import useFollowUser from "../../hooks/useFollowUser";
+import PropTypes from "prop-types";
+
 
 
 
@@ -36,3 +38,10 @@ export default function PostHeader({post,creatorProfile}) {
     </Flex>
   )
 }
+PostHeader.propTypes = {
+  post: PropTypes.object.isRequired,
+  creatorProfile: PropTypes.shape({
+    username: PropTypes.string.isRequired,
+    profilePicURL: PropTypes.string.isRequired
+  })
+};

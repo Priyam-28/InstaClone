@@ -9,7 +9,7 @@ export default function FeedPost() {
   // const { userProfile } = useGetUserProfileById(post.createdBy);
   return (
     <>
-    <PostHeader/>
+    {/* <PostHeader/> */}
     <Box my={2} borderRadius={5}>
         
         <Image src='/img1.png' alt={"Feed Post img"} />
