@@ -21,3 +21,5 @@ used modals from chakra for Editing User Profile and The Search Profile
 The useRef hook in React creates a mutable reference that persists across component renders. Unlike useState, which manages state and triggers re-rendering, useRef is primarily used to access and manipulate the DOM or to store mutable values that don't trigger re-renders. It returns a mutable object with a current property.
 
 for seaching user ot anything like that we use query from firebase docs
+
+useEffect in react
