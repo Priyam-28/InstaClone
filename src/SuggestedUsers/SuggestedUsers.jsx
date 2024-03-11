@@ -1,7 +1,7 @@
 // import React from 'react'
 
 import { Box, Flex, Text, VStack } from "@chakra-ui/react";
-import useGetSuggestedUser from "../hooks/useGetSuggestedUser"
+import useGetSuggestedUser from "../hooks/useGetSuggestedUsers"
 import SuggestedHeader from "../components/SuggestedUsers/SuggestedHeader";
 import SuggestedUser from "./SuggestedUser";
 import { Link } from "react-router-dom";

@@ -23,3 +23,8 @@ The useRef hook in React creates a mutable reference that persists across compon
 for seaching user ot anything like that we use query from firebase docs
 
 useEffect in react
+
+useDisclosure for opening and closing models used for search ,create post
+
+            createdAt:Date.now(),
+he addDoc function returns a reference to the newly created document, which is stored in postDocRef
