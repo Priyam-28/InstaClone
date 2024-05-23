@@ -4,8 +4,9 @@ import { Box, Flex, Spinner } from "@chakra-ui/react";
 import { useLocation } from "react-router-dom";
 import Sidebar from "../../components/Sidebar/Sidebar"
 import { useAuthState } from "react-firebase-hooks/auth";
-import Navbar from "../../components/Navbar/Navbar";
+
 import { auth } from "../../firebase/firebase";
+import Navbar from "../../components/Navbar/Navbar";
 
 export default function PageLayout({children}) {
     const {pathname}=useLocation();
