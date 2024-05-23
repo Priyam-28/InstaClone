@@ -12,6 +12,7 @@ const useGetUserPosts = () => {
 	const userProfile = useUserProfileStore((state) => state.userProfile);
 
 	useEffect(() => {
+		console.log(userProfile)
 		const getPosts = async () => {
 			if (!userProfile) return;
 			setIsLoading(true);
