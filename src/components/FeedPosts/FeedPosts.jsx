@@ -1,39 +1,39 @@
-import { Box, Container, Flex, Skeleton, SkeletonCircle, Text, VStack } from '@chakra-ui/react'
-// import React from 'react'
-import FeedPost from "./FeedPost"
+import { Box, Container, Flex, Skeleton, SkeletonCircle, Text, VStack } from "@chakra-ui/react";
+import FeedPost from "./FeedPost";
+import useGetFeedPosts from "../../hooks/useGetFeedPosts";
 
-export default function FeedPosts() {
-  return (
-        <Container maxW={"container.sm"} py={10} px={2}>
-          <VStack  gap={4} alignItems={"flex-start"} mb={10}>
-            <Flex gap={2}>
-              <SkeletonCircle size={10}/>
-              <VStack gap={2} alignItems={"flex-start"}>
-                <SkeletonCircle height={"10px"} w={"200px"}/>
-                <SkeletonCircle height={"10px"} w={"200px"}/>
-              </VStack>
-            </Flex>
-            <Skeleton w={"full"}>
-              <Box h={"400px"}>Contents wrapped</Box>
-            </Skeleton>
-          </VStack>
-          <FeedPost/>
-          <>
+const FeedPosts = () => {
+	const { isLoading, posts } = useGetFeedPosts();
+
+	return (
+		<Container maxW={"container.sm"} py={10} px={2}>
+			{isLoading &&
+				[0, 1, 2].map((_, idx) => (
+					<VStack key={idx} gap={4} alignItems={"flex-start"} mb={10}>
+						<Flex gap='2'>
+							<SkeletonCircle size='10' />
+							<VStack gap={2} alignItems={"flex-start"}>
+								<Skeleton height='10px' w={"200px"} />
+								<Skeleton height='10px' w={"200px"} />
+							</VStack>
+						</Flex>
+						<Skeleton w={"full"}>
+							<Box h={"400px"}>contents wrapped</Box>
+						</Skeleton>
+					</VStack>
+				))}
+
+			{!isLoading && posts.length > 0 && posts.map((post) => <FeedPost key={post.id} post={post} />)}
+			{!isLoading && posts.length === 0 && (
+				<>
 					<Text fontSize={"md"} color={"red.400"}>
-						Dayuum. Looks like you don&apos;t have any friends.
+						Dayuum. Looks like you don&apos;t have any friends.Sad Life
 					</Text>
-					<Text color={"red.400"}>Stop coding and go make some!!</Text>
+					<Text color={"red.400"}>Stop coding and go make some you nerd</Text>
 				</>
-          <>
-					<Text fontSize={"md"} color={"red.400"}>
-						Dayuum. Looks like you don&apos;t have any friends.
-					</Text>
-					<Text color={"red.400"}>Stop coding and go make some!!</Text>
-				</>
+			)}
+		</Container>
+	);
+};
 
-
-
-            
-        </Container>
-  )
-}
+export default FeedPosts;
