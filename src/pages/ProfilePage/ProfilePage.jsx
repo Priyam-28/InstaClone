@@ -1,23 +1,24 @@
-// import React from 'react'
 import { Container, Flex, Link, Skeleton, SkeletonCircle, Text, VStack } from "@chakra-ui/react";
 import ProfileHeader from "../../components/Profile/ProfileHeader";
 import ProfileTabs from "../../components/Profile/ProfileTabs";
 import ProfilePosts from "../../components/Profile/ProfilePosts";
-import useGetUserProfilebyName from "../../hooks/useGetUserProfilebyName";
-import { Link as RouterLink } from "react-router-dom";
+
 import { useParams } from "react-router-dom";
-export default function ProfilePage() {
-	const {uname}=useParams()
-	useGetUserProfilebyName(uname)
-	const { isLoading, userProfile } = useGetUserProfilebyName(uname); 
-	const usernotFound=!isLoading && ! userProfile;
-	if (usernotFound) return <UserNotFound/>
-  return (
-<Container maxW='container.lg' py={5}>
+import { Link as RouterLink } from "react-router-dom";
+import useGetUserProfilebyName from "../../hooks/useGetUserProfilebyName";
+
+const ProfilePage = () => {
+	const { username } = useParams();
+	const { isLoading, userProfile } = useGetUserProfilebyName(username);
+
+	const userNotFound = !isLoading && !userProfile;
+	if (userNotFound) return <UserNotFound />;
+
+	return (
+		<Container maxW='container.lg' py={5}>
 			<Flex py={10} px={4} pl={{ base: 4, md: 10 }} w={"full"} mx={"auto"} flexDirection={"column"}>
-			{!isLoading && userProfile && <ProfileHeader />}
+				{!isLoading && userProfile && <ProfileHeader />}
 				{isLoading && <ProfileHeaderSkeleton />}
-		
 			</Flex>
 			<Flex
 				px={{ base: 2, sm: 4 }}
@@ -31,19 +32,12 @@ export default function ProfilePage() {
 				<ProfilePosts />
 			</Flex>
 		</Container>
-
-  )
-}
-const UserNotFound = () => {
-	return (
-		<Flex flexDir='column' textAlign={"center"} mx={"auto"}>
-			<Text fontSize={"2xl"}>User Not Found</Text>
-			<Link as={RouterLink} to={"/"} color={"blue.500"} w={"max-content"} mx={"auto"}>
-				Go home
-			</Link>
-		</Flex>
 	);
 };
+
+export default ProfilePage;
+
+// skeleton for profile header
 const ProfileHeaderSkeleton = () => {
 	return (
 		<Flex
@@ -63,3 +57,13 @@ const ProfileHeaderSkeleton = () => {
 	);
 };
 
+const UserNotFound = () => {
+	return (
+		<Flex flexDir='column' textAlign={"center"} mx={"auto"}>
+			<Text fontSize={"2xl"}>User Not Found</Text>
+			<Link as={RouterLink} to={"/"} color={"blue.500"} w={"max-content"} mx={"auto"}>
+				Go home
+			</Link>
+		</Flex>
+	);
+};

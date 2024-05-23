@@ -1,20 +1,5 @@
-import {
-	Avatar,
-	Button,
-	Center,
-	Flex,
-	FormControl,
-	FormLabel,
-	Heading,
-	Input,
-	Modal,
-	ModalBody,
-	ModalCloseButton,
-	ModalContent,
-	ModalHeader,
-	ModalOverlay,
-	Stack,
-} from "@chakra-ui/react";
+import {Avatar,Button,Center,Flex,FormControl,FormLabel,Heading,Input,Modal,ModalBody,ModalCloseButton,ModalContent,ModalHeader,ModalOverlay,
+Stack,} from "@chakra-ui/react";
 import { useRef, useState } from "react";
 import useAuthStore from "../../store/authStore";
 import useShowToast from "../../hooks/useShowToast";

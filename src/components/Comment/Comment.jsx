@@ -1,7 +1,8 @@
 import { Avatar, Flex, Skeleton, SkeletonCircle, Text } from "@chakra-ui/react";
 import useGetUserProfileById from "../../hooks/useGetUserProfileById";
 import { Link } from "react-router-dom";
-import { timeAgo } from "../../utils/timeAgo";
+
+import { timego } from "../../utils/timego";
 
 const Comment = ({ comment }) => {
 	const { userProfile, isLoading } = useGetUserProfileById(comment.createdBy);
@@ -22,7 +23,7 @@ const Comment = ({ comment }) => {
 					<Text fontSize={14}>{comment.comment}</Text>
 				</Flex>
 				<Text fontSize={12} color={"gray"}>
-					{timeAgo(comment.createdAt)}
+					{timego(comment.createdAt)}
 				</Text>
 			</Flex>
 		</Flex>

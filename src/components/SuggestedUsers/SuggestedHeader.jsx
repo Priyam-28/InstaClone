@@ -1,7 +1,7 @@
 // import React from 'react'
 import useLogout from '../../hooks/useLogout';
 import useAuthStore from '../../store/authStore';
-import { Button, Flex, Text } from '@chakra-ui/react';
+import { Avatar, Button, Flex, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
 export default function SuggestedHeader() {
@@ -12,6 +12,7 @@ export default function SuggestedHeader() {
     <Flex justifyContent={"space-between"} alignItems={"center"} w={"full"}>
         <Flex alignItems={"center"} gap={2}>
             <Link to={`${authUser.username}`}>
+            <Avatar size={"lg"} src={authUser.profilePicURL} />
                 <Text fontSize={12} fontWeight={"bold"}>
                     {authUser.username}
                 </Text>

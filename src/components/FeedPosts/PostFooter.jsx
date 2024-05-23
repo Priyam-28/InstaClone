@@ -1,11 +1,11 @@
 import { Box, Button, Flex, Input, InputGroup, InputRightElement, Text, useDisclosure } from "@chakra-ui/react";
 import { useRef, useState } from "react";
-import { CommentLogo, NotificationsLogo, UnlikeLogo } from "../../assets/constants";
+import { CommentLogo, NotificationsLogo, UnlikeLogo } from "../../assets/content";
 import usePostComment from "../../hooks/usePostComment";
 import useAuthStore from "../../store/authStore";
 import useLikePost from "../../hooks/useLikePost";
-import { timeAgo } from "../../utils/timeAgo";
 import CommentsModal from "../Modals/CommentsModal";
+import { timego } from "../../utils/timego";
 
 const PostFooter = ({ post, isProfilePage, creatorProfile }) => {
 	const { isCommenting, handlePostComment } = usePostComment();
@@ -37,7 +37,7 @@ const PostFooter = ({ post, isProfilePage, creatorProfile }) => {
 
 			{isProfilePage && (
 				<Text fontSize='12' color={"gray"}>
-					Posted {timeAgo(post.createdAt)}
+					Posted {timego(post.createdAt)}
 				</Text>
 			)}
 
