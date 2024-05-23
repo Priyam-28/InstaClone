@@ -1,12 +1,12 @@
 // import React from 'react'
 
-import { Box, Flex, Spinner } from "@chakra-ui/react";
-import { useLocation } from "react-router-dom";
+import { Box, Button, Container, Flex, Image, Spinner } from "@chakra-ui/react";
+import { Link, useLocation } from "react-router-dom";
 import Sidebar from "../../components/Sidebar/Sidebar"
 import { useAuthState } from "react-firebase-hooks/auth";
 
 import { auth } from "../../firebase/firebase";
-import Navbar from "../../components/Navbar/Navbar";
+
 
 export default function PageLayout({children}) {
     const {pathname}=useLocation();
@@ -41,3 +41,27 @@ const PageSpinner = () => {
 		</Flex>
 	);
 };
+
+const Navbar = () => {
+	return (
+		<Container maxW={"container.lg"} my={4}>
+			<Flex w={"full"} justifyContent={{ base: "center", sm: "space-between" }} alignItems={"center"}>
+				<Image src='/logo.png' h={20} display={{ base: "none", sm: "block" }} cursor={"pointer"} />
+				<Flex gap={4}>
+					<Link to='/auth'>
+						<Button colorScheme={"blue"} size={"sm"}>
+							Login
+						</Button>
+					</Link>
+					<Link to='/auth'>
+						<Button variant={"outline"} size={"sm"}>
+							Signup
+						</Button>
+					</Link>
+				</Flex>
+			</Flex>
+		</Container>
+	);
+};
+
+
