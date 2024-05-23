@@ -10,13 +10,11 @@ const ProfileLink = () => {
 			hasArrow
 			label={"Profile"}
 			placement='right'
-			ml={1}
 			openDelay={500}
-			display={{ base: "block", md: "none" }}
 		>
 			<Link
 				display={"flex"}
-				to={`/${authUser?.username}`}
+				to={`/${authUser?.uname}`}
 				as={RouterLink}
 				alignItems={"center"}
 				gap={4}
@@ -25,6 +23,8 @@ const ProfileLink = () => {
 				p={2}
 				w={{ base: 10, md: "full" }}
 				justifyContent={{ base: "center", md: "flex-start" }}
+				ml={1}
+				
 			>
 				<Avatar size={"sm"} src={authUser?.profilePicURL || ""} />
 				<Box display={{ base: "none", md: "block" }}>Profile</Box>
